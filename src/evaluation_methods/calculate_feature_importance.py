@@ -9,9 +9,9 @@ def calculate_feature_importance(model, feature_name):
     :param feature_name: The name of the dependent feature (used in the chart's
     title).
     """
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize = (10, 6))
     xgb.plot_importance(
-        model, 
+        model,
         #max_num_features = 10, 
         importance_type = "weight", 
         title = f"{feature_name} Feature Importance"

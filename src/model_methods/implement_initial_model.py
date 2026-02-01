@@ -13,8 +13,8 @@ def implement_initial_model(df, y_feature):
     :param y_feature: The feature from the dataframe that you want the model to 
     predict.
 
-    returns: The Root Mean Squared Error and Mean Absolute Percentage Error of the
-    model.
+    returns: The model, as well as the Root Mean Squared Error and Mean Absolute 
+    Percentage Error of the model.
     """
     # Split the specified y feature from the rest of the data so it can be used
     # as the dependent variable.
@@ -22,10 +22,10 @@ def implement_initial_model(df, y_feature):
     y = df[y_feature]
 
     # Conduct the train-test split with standard parameters.
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 
     # Initialize the model with default parameters. Tuning will occur in subsequent tasks.
-    model = xgb.XGBRegressor(random_state=42)
+    model = xgb.XGBRegressor(random_state = 42)
 
     # Fit the model to the training data.
     model.fit(X_train, y_train)
@@ -38,4 +38,4 @@ def implement_initial_model(df, y_feature):
     rmse = np.sqrt(mean_squared_error(y_test, predictions))
     mape = mean_absolute_percentage_error(y_test, predictions)
 
-    return rmse, mape
+    return model, rmse, mape
