@@ -28,7 +28,7 @@ def create_bar_graphs(baseline_rmses, baseline_mapes, optimized_rmses, optimized
     rects2 = ax1.bar(x + width/2, optimized_rmses, width, label = "Optimized", color = "#55a868")
 
     ax1.set_ylabel("RMSE Score")
-    ax1.set_title("RMSE Comparison\n(Lower is Better)")
+    ax1.set_title("RMSE Comparison")
     ax1.set_xticks(x)
     ax1.set_xticklabels(labels)
     ax1.legend()
@@ -43,7 +43,7 @@ def create_bar_graphs(baseline_rmses, baseline_mapes, optimized_rmses, optimized
     rects4 = ax2.bar(x + width/2, optimized_mapes, width, label = "Optimized", color = "#55a868")
 
     ax2.set_ylabel("MAPE (Decimal)")
-    ax2.set_title("MAPE Comparison\n(Lower is Better)")
+    ax2.set_title("MAPE Comparison")
     ax2.set_xticks(x)
     ax2.set_xticklabels(labels)
     ax2.legend()
