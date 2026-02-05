@@ -17,5 +17,5 @@ def calculate_feature_importance(model, feature_name):
         title = f"{feature_name} Feature Importance"
     )
     plt.tight_layout()
-    plt.savefig(f"{feature_name} Feature Importance.png")
+    plt.savefig(f"../visualizations/{feature_name} Feature Importance.png")
     print(f"{feature_name} Feature Importance Chart Saved")
