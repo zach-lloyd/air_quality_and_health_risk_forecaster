@@ -19,12 +19,14 @@ def shap_analysis(model, x_test, feature_name):
     plt.title(f"SHAP Summary Plot: {feature_name}", fontsize=16)
     shap.summary_plot(shap_values, x_test, max_display = 30, show = False)
     plt.tight_layout()
-    plt.savefig(f"../visualizations/{feature_name} Shap Summary.png")
+    plt.savefig(f"../visualizations/{feature_name}_shap_summary.png")
+    print(f"{feature_name} Shap Summary Chart Saved")
+
 
     # Plot B: SHAP Bar Plot
     plt.figure(figsize = (10, 6))
     plt.title(f"Mean |SHAP| Value: {feature_name}", fontsize = 16)
     shap.plots.bar(shap_values, max_display = 30, show = False)
     plt.tight_layout()
-    plt.savefig(f"../visualizations/{feature_name} Shap Analysis.png")
+    plt.savefig(f"../visualizations/{feature_name}_shap_analysis.png")
     print(f"{feature_name} Shap Analysis Chart Saved")
